@@ -1,11 +1,13 @@
-// ignore_for_file: file_names, unused_field, prefer_const_constructors, avoid_unnecessary_containers, deprecated_member_use, sort_child_properties_last, non_constant_identifier_names, avoid_types_as_parameter_names, avoid_print, unused_local_variable, unused_import
+// ignore_for_file: file_names, unused_field, prefer_const_constructors, avoid_unnecessary_containers, deprecated_member_use, sort_child_properties_last, non_constant_identifier_names, avoid_types_as_parameter_names, avoid_print, unused_local_variable, unused_import, depend_on_referenced_packages
 
 import 'package:flutter/material.dart';
+import 'package:helpet_app/provider/auth_provider.dart';
 import 'package:helpet_app/ui/model/onbordingModel.dart';
-import 'package:helpet_app/ui/pages/access/loginScreen.dart';
+import 'package:helpet_app/ui/pages/access/ScreenLogin.dart';
 import 'package:helpet_app/ui/pages/homepage/HomeScreen.dart';
 import 'package:helpet_app/ui/theme/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
 
 class OnbordingPage extends StatefulWidget {
   const OnbordingPage({Key? key}) : super(key: key);
@@ -36,6 +38,9 @@ class _OnbordingPageState extends State<OnbordingPage> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+
     return Scaffold(
       backgroundColor: currentIndex % 1 == 0 ? kwhite : kblue,
       appBar: AppBar(
@@ -44,9 +49,12 @@ class _OnbordingPageState extends State<OnbordingPage> {
         actions: [
           TextButton(
             onPressed: () {
-              _storeOnboardInfo();
+              ap.isSignedIn == true
+                  ? Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()))
+                  : _storeOnboardInfo();
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()));
+                  MaterialPageRoute(builder: (context) => ScreenLogin()));
             },
             child: Text(
               "Skip",
@@ -128,7 +136,7 @@ class _OnbordingPageState extends State<OnbordingPage> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => LoginScreen(),
+                      builder: (_) => ScreenLogin(),
                     ),
                   );
                 }

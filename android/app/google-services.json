@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "985516497067",
+    "project_id": "helpetapp-9ae4c",
+    "storage_bucket": "helpetapp-9ae4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985516497067:android:9211bee077709937ac3fee",
+        "android_client_info": {
+          "package_name": "com.example.helpet_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985516497067-f0lgitni6e3rmg0qit4bb4dj0h5otk5i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.helpet_app",
+            "certificate_hash": "bf22657135d50d2a6e84e0f36b920cbc470b7b51"
+          }
+        },
+        {
+          "client_id": "985516497067-ob9aohc5nt044gerca94i53kal4rrms8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuJbgLxKUJc4Y8WHidpU3EEnDugrAoyjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985516497067-ob9aohc5nt044gerca94i53kal4rrms8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
