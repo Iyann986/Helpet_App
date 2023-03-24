@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:helpet_app/provider/auth_provider.dart';
 import 'package:helpet_app/ui/pages/access/otp_Screen.dart';
-import 'package:helpet_app/ui/pages/onbordingPage/onbordingPage.dart';
-import 'package:helpet_app/ui/pages/splashScreen/splashScreen.dart';
+import 'package:helpet_app/ui/pages/onbordingPage/onbording_page.dart';
+import 'package:helpet_app/ui/pages/splashScreen/splash_screen.dart';
 import 'package:onboarding_intro_screen/onboarding_screen.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';

@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:helpet_app/provider/auth_provider.dart';
-import 'package:helpet_app/ui/model/onbordingModel.dart';
-import 'package:helpet_app/ui/pages/access/ScreenLogin.dart';
-import 'package:helpet_app/ui/pages/homepage/HomeScreen.dart';
+import 'package:helpet_app/ui/model/onbording_model.dart';
+import 'package:helpet_app/ui/pages/access/screen_login.dart';
+import 'package:helpet_app/ui/pages/homepage/home_screen.dart';
 import 'package:helpet_app/ui/theme/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
@@ -128,7 +128,20 @@ class _OnbordingPageState extends State<OnbordingPage> {
             height: 50,
             margin: EdgeInsets.all(45),
             width: double.infinity,
-            child: FlatButton(
+            child: TextButton(
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                    side: BorderSide(color: Color(0xff473DD5)),
+                  ),
+                ),
+                foregroundColor: MaterialStateProperty.all<Color>(
+                  Colors.white,
+                ),
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Color(0xff473DD5)),
+              ),
               child: Text(
                   currentIndex == contents.length - 1 ? "Get Started" : "Next"),
               onPressed: () {
@@ -145,11 +158,11 @@ class _OnbordingPageState extends State<OnbordingPage> {
                   curve: Curves.bounceIn,
                 );
               },
-              color: Color(0xff473DD5),
-              textColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
+              // color: Color(0xff473DD5),
+              // textColor: Colors.white,
+              // shape: RoundedRectangleBorder(
+              //   borderRadius: BorderRadius.circular(15),
+              // ),
             ),
           )
         ],

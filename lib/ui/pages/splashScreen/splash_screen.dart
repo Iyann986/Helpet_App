@@ -3,7 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:helpet_app/ui/pages/onbordingPage/onbordingPage.dart';
+import 'package:helpet_app/ui/pages/onbordingPage/onbording_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -29,30 +29,13 @@ class _SplashScreenState extends State<SplashScreen> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              "assets/images/logoHelpet.png",
-              height: 200,
-              width: 300,
-            ),
-            SizedBox(
-              height: 100,
-            ),
-            Positioned(
-              bottom: 90,
-              left: 20,
-              child: RichText(
-                text: TextSpan(
-                  text: " ",
-                ),
-              ),
-            ),
-          ],
+      body: Center(
+        child: Image(
+          height: 200,
+          width: 300,
+          image: AssetImage(
+            "assets/images/logoHelpet.png",
+          ),
         ),
       ),
     );
